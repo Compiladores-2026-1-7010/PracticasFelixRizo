@@ -25,7 +25,7 @@ Al preprocesamiento del código fuente.
 Compilación a ensamblador
 
 Comando:
-<pre> c gcc -Wall -S programa.i </pre>
+<pre> gcc -Wall -S programa.i </pre>
 
 ¿Para qué sirve la opción -Wall?
 Activa todas las advertencias que el compilador puede detectar sobre código sospechoso o inseguro.
@@ -63,14 +63,15 @@ A la etapa de ensamblado.
 Enlazado a ejecutable
 
 Comando:
-ld -o ejecutable -dynamic-linker /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 \
+<pre>ld -o ejecutable -dynamic-linker /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 \
    /usr/lib/x86_64-linux-gnu/Scrt1.o \
    /usr/lib/x86_64-linux-gnu/crti.o \
    programa.o \
    -lc \
    /usr/lib/x86_64-linux-gnu/crtn.o \
    /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o \
-   /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o
+   /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o</pre>
+
 
 En caso de que ld mande errores, proponga una solución
 Si faltan archivos, verificar sus rutas exactas en el sistema o usar gcc programa.o -o ejecutable para que el compilador gestione automáticamente el enlazado.
@@ -106,7 +107,7 @@ Segundo programa con 4 directivas distintas
 
 Código:
 
-#include <stdio.h>
+<pre>#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
@@ -129,13 +130,17 @@ int main(void) {
     printf("Esta es la línea %d del archivo %s\n", __LINE__, __FILE__);
     return 0;
 }
+</pre>
+
 
 Explicación de las directivas:
 
-#define: Define macros o constantes. Aquí define RADIO y PI para el cálculo del área.
+<pre>#define: Define macros o constantes. Aquí define RADIO y PI para el cálculo del área.
 #undef: Elimina definiciones anteriores de macros. Aquí permite redefinir PI sin conflicto.
 #ifdef / #else: Incluye código solo si una macro está definida. Aquí activa la macro LOG() solo si DEBUG está definido.
-#include: Incluye archivos de cabecera. Aquí <math.h> para usar pow() y funciones matemáticas.
+#include: Incluye archivos de cabecera. Aquí <math.h> para usar pow() y funciones matemáticas.</pre>
+
+
 
 Conclusión:
 El proceso de pasar de un código fuente en C a un ejecutable involucra múltiples etapas: preprocesamiento, compilación, ensamblado y enlazado. Cada etapa transforma el código de manera específica y es fundamental para entender cómo funciona un compilador. Las directivas del preprocesador permiten controlar la inclusión de código, definir constantes y macros, y condicionar la compilación, demostrando cómo pequeñas modificaciones en el código fuente pueden afectar el resultado final del programa.
