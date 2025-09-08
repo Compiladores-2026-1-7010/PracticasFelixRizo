@@ -3,7 +3,7 @@ Práctica 0: Sistema de procesamiento de Lenguaje
 Preprocesamiento del primer programa (programa.c)
 
 Comando:
-cpp programa.c programa.i
+<pre>cpp programa.c programa.i</pre>
 
 ¿Qué ocurre cuando se invoca el comando cpp con esos argumentos?
 El comando cpp realiza el preprocesamiento del programa fuente programa.c y genera el archivo programa.i. Se eliminan los comentarios, se expanden las macros y se incluyen los archivos de cabecera.
@@ -44,7 +44,7 @@ A la compilación, del lenguaje C a ensamblador.
 Ensamblado a código objeto
 
 Comando:
-as programa.s -o programa.o
+<pre>as programa.s -o programa.o</pre>
 
 Antes de revisarlo, indique cuál es su hipótesis sobre lo que debe contener el archivo con extensión .o
 Es el programa objeto, ya ensamblado y listo para enlazar.
