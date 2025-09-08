@@ -25,7 +25,7 @@ Al preprocesamiento del código fuente.
 Compilación a ensamblador
 
 Comando:
-gcc -Wall -S programa.i
+<pre> ```c gcc -Wall -S programa.i ``` </pre>
 
 ¿Para qué sirve la opción -Wall?
 Activa todas las advertencias que el compilador puede detectar sobre código sospechoso o inseguro.
