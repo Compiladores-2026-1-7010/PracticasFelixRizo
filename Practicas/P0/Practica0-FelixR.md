@@ -139,4 +139,3 @@ Explicación de las directivas:
 
 Conclusión:
 El proceso de pasar de un código fuente en C a un ejecutable involucra múltiples etapas: preprocesamiento, compilación, ensamblado y enlazado. Cada etapa transforma el código de manera específica y es fundamental para entender cómo funciona un compilador. Las directivas del preprocesador permiten controlar la inclusión de código, definir constantes y macros, y condicionar la compilación, demostrando cómo pequeñas modificaciones en el código fuente pueden afectar el resultado final del programa.
-
