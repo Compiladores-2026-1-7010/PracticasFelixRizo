@@ -127,6 +127,60 @@ e. Ejecutar mediante: ```./nombreEjecutable```
     3. Los identificadores válidos del lenguaje C++, con longitud máxima de 32 caracteres (**Sugerencia**: use el operador {m,n}).
     4. Los espacios en blanco.
 
+
+  1. ¿Qué ocurre si en la primera sección se quitan las llaves al nombre de la macro letra?
+- Da error de compilación, porque el código C++ debe ir dentro de %{ ... %}.
+
+2. ¿Qué ocurre si en la segunda sección se quitan las llaves a las acciones?
+- Da error de sintaxis, porque Flex requiere llaves para delimitar las acciones de las expresiones regulares.
+
+3. ¿Cómo se escribe un comentario en Flex?
+- Igual que en C++: // comentario de línea o /* comentario de varias líneas */
+
+4. ¿Qué se guarda en yytext?
+- Contiene la cadena que coincide con la expresión regular actualmente reconocida por el lexer.
+
+5. ¿Qué pasa al ejecutar el programa e introducir cadenas de caracteres y de dígitos por la consola?
+- Cada token reconocido ejecuta su acción: los números muestran "Encontré un número" y las palabras "Encontré una palabra". Los espacios se ignoran si así está definido.
+
+6. ¿Qué ocurre si introducimos caracteres como "*" en la consola?
+- Si no hay regla que los reconozca, se ejecuta la regla por defecto (.) o se ignoran, mostrando posiblemente "Caracter no reconocido".
+
+7. Modificación al código para reconocer nuevos tokens:
+
+Código:
+```
+%{
+#include <iostream>
+%}
+
+%option c++
+%option noyywrap
+
+digito [0-9]
+letra [a-zA-Z]
+identificador {letra}({letra}|{digito}|_){0,31}
+hexadecimal 0[xX][0-9a-fA-F]+
+espacio [ \t\n]
+palabra_reservada int|float|if|else|while
+
+%%
+
+{espacio} { /* ignorar */ }
+{hexadecimal} { std::cout << "Hexadecimal: " << yytext << std::endl; }
+{palabra_reservada} { std::cout << "Palabra reservada: " << yytext << std::endl; }
+{identificador} { std::cout << "Identificador: " << yytext << std::endl; }
+
+. { std::cout << "Caracter no reconocido: " << yytext << std::endl; }
+
+%%
+
+int main() {
+    FlexLexer* lexer = new yyFlexLexer;
+    lexer->yylex();
+}
+```
+
 ---
 
 ## Analizador léxico para el lenguaje C_1
