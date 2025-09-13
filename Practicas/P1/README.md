@@ -248,6 +248,35 @@ $ ./compiler prueba
 #### Ejercicios
 
 8. Describir el conjunto de terminales y la expresión regular que reconoce a cada uno  en _lexer.ll_. (2 pts)
+
+Conjunto de terminales y expresiones regulares en `lexer.ll`
+
+| Terminal        | Expresión regular en `lexer.ll`                     | Descripción                                      |
+|-----------------|--------------------------------------------------|-------------------------------------------------|
+| `int`           | `"int"`                                          | Palabra reservada `int`                         |
+| `float`         | `"float"`                                        | Palabra reservada `float`                       |
+| `if`            | `"if"`                                           | Palabra reservada `if`                          |
+| `else`          | `"else"`                                         | Palabra reservada `else`                        |
+| `while`         | `"while"`                                        | Palabra reservada `while`                       |
+| Identificador   | `[a-zA-Z_][a-zA-Z0-9_]*`                        | Nombres de variables o funciones válidos       |
+| Número entero   | `[0-9]+`                                         | Secuencia de dígitos                            |
+| Número flotante | `[0-9]+(\.[0-9]*)?([eE][+-]?[0-9]+)?`          | Números con decimal o notación científica      |
+| `;`             | `";"`                                            | Punto y coma                                   |
+| `,`             | `","`                                            | Coma                                           |
+| `(`             | `"("`                                            | Paréntesis izquierdo                           |
+| `)`             | `")"`                                            | Paréntesis derecho                              |
+| Otros           | `.`                                              | Cualquier otro carácter (genera error léxico) |
+
+**Notas:**
+
+- Las palabras reservadas se escriben entre comillas `"..."` en `lexer.ll`.  
+- Los identificadores y números usan clases de caracteres y patrones (`[a-zA-Z_][a-zA-Z0-9_]*`, `[0-9]+`).  
+- Los espacios y saltos de línea se ignoran con `[ \t\n]+`.  
+- Cualquier otro carácter no reconocido se captura con `.` y genera un error léxico.
+
+
+
+
 9. Generar acciones léxicas para cada terminal de nuestro lenguaje en _Lexer.cpp_, de modo que se muestre en pantalla la slida esperada con el archivo _prueba_. (2 pts)
 10. Crear un _Makefile_. (1 pt)
 
