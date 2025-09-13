@@ -326,6 +326,44 @@ Además, se creó un `Makefile` que facilita la compilación y ejecución del pr
 13. Proponer 4 archivos de prueba nuevos, 2 válidos y 2 inválidos. (0.25pts)
 
 
+Se proponen cuatro archivos de prueba adicionales para el lexer: 2 válidos y 2 inválidos.
 
+### Archivos válidos
+
+**`valido1.txt`**
+```c
+int x
+float y
+if x1 > 0
+else y2 < 1.5
+while i < 10
+```
+
+**`valido2.txt`**
+
+```c
+a = 123;
+b = 4.56e2;
+c_var = a + b;
+
+```
+
+**`invalido1.txt`**
+
+```c
+123abc
+$var
+int#float
+
+```
+
+**`invalido2.txt`**
+
+```c
+@while
+9.8.7
+if$else
+
+```
 
 
