@@ -280,6 +280,44 @@ Conjunto de terminales y expresiones regulares en `lexer.ll`
 9. Generar acciones léxicas para cada terminal de nuestro lenguaje en _Lexer.cpp_, de modo que se muestre en pantalla la slida esperada con el archivo _prueba_. (2 pts)
 10. Crear un _Makefile_. (1 pt)
 
+
+Se implementaron todas las acciones léxicas en `lexer.ll` para cada terminal del lenguaje. Esto permite que al ejecutar el compilador con el archivo de prueba `prueba.txt` se genere la salida esperada, mostrando el token y su lexema correspondiente.
+
+Además, se creó un `Makefile` que facilita la compilación y ejecución del proyecto:
+
+- `make` → compila el lexer y el programa principal.
+- `make run` → ejecuta el compilador con `prueba.txt`.
+- `make clean` → elimina archivos generados (`Lexer.cpp` y `compiler`).
+
+### Salida final al correr `make run`:
+
+```
+12, int
+15, float
+11, if
+14, else
+13, while
+12, int
+16, 12345
+16, 1.2e6
+10, a1
+10, a_23
+10, ___
+10, id2
+10, if3
+10, while4
+10, _b
+9, ;
+8, ,
+6, (
+7, )
+12, int
+7, )
+10, a
+10, _qbc
+```
+
+
 ---
 #### Extras
 
