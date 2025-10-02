@@ -1,0 +1,2 @@
+int invalid_char;
+invalid_char = 100 @ 2;

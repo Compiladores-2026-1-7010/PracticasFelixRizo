@@ -1,0 +1,8 @@
+int count;
+count = 10;
+
+while (count)
+  if (count)
+    count = count - 1;
+  else
+    count = 0;
