@@ -4,7 +4,7 @@
 
 Ok, primero lo primero. Nuestra gramática se divide en tres partes clave:
 
-* **N (No-terminales):** Básicamente, son los conceptos o "bloques de construcción" de nuestro lenguaje, como `expresion` o `sentencia`. No son código real, sino las ideas que lo forman.
+* **N (No terminales):** Básicamente, son los conceptos o "bloques de construcción" de nuestro lenguaje, como `expresion` o `sentencia`. No son código real, sino las ideas que lo forman.
     * $N = \{ \text{programa, declaraciones, declaracion, tipo, lista\_var, sentencias, sentencia, expresion} \}$
 
 * **Σ (Terminales):** Estas son las palabras y símbolos que sí existen en el código, como `if`, `while`, `+`, `(`, etc. Son las piezas del LEGO con las que construimos todo.
