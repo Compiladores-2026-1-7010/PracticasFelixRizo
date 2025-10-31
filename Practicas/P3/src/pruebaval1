@@ -1,0 +1,9 @@
+int temp, limite;
+float ajuste;
+
+temp = 25;
+limite = 30;
+if (temp - limite)
+  ajuste = 1/2;
+else
+  ajuste = 2/2;

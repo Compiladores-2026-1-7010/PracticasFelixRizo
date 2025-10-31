@@ -1,0 +1,7 @@
+float total, descuento, final;
+int cantidad;
+
+cantidad = 5;
+total = cantidad * 12.5;
+descuento = total * 0.1;
+final = total - descuento;
