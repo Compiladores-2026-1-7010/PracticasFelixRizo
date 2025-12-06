@@ -1,0 +1,3 @@
+int var;
+var = 100;
+$var = 50;

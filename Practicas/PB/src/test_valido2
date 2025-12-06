@@ -1,0 +1,10 @@
+int i;
+float total;
+
+i = 0;
+total = 1.5;
+
+while (i) 
+    total = total * 2 + 1;
+
+i = i + 1;
