@@ -1,0 +1,8 @@
+-- Ejemplo de codigo art
+if temperatura > 36.5 then
+    resultado := "Fiebre";
+else
+    <* Esto es un comentario
+       de bloque multiplinea *>
+    resultado := "Normal";
+    val := 100;

@@ -1,0 +1,5 @@
+10 20 5 A
+Hola mundo esto se imprime igual B
+1 1 1 1 A
+100 200 A
+Solo texto B

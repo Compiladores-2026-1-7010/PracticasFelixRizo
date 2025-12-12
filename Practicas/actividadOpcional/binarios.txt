@@ -1,0 +1,4 @@
+Hola 0b101 mundo 0b11
+0b10 (esto es dos)
+No contar 0b (incompleto) o 101 (falta prefijo)
+0b1111
